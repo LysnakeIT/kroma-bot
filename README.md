@@ -1,6 +1,6 @@
 # 🤖 Kroma-bot 🤖 [<img align="left" src="https://cdn.discordapp.com/avatars/500959710883872798/12d5da288ac949817abc8c5a49784079.png?size=256" width="256px"/>](https://code.visualstudio.com/)
 
-### Voici une majeure partie du code du bot Kroma, des parties vont rester secrète 
+### Voici une majeure partie du code du bot Kroma, des parties vont rester secrètes 
 
 
 ### Il a été developpé en Discord.js V12 et voici les outils : 
