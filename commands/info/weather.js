@@ -8,11 +8,11 @@ module.exports = {
 
         weather.find({ search: args.join(" "), degreeType: 'C' }, function (err, result) {
 
-            if (!result) {
-                message.channel.send("**:x: | Emplacement introuvable !**")
-                return;
-            } else if (result.length === 0) {
-                message.channel.send("**:x: | Emplacement introuvable !**")
+            if (!result || result.length === 0) {
+                var erreur = new Discord.MessageEmbed()
+                    .setColor("#2F3136")
+                    .setTitle("<a:non:802645550435532810> Emplacement introuvable !")
+                message.channel.send(erreur)
                 return;
             }
 
