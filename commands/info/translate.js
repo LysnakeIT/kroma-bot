@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const Client = new Discord.Client();
-const translate = require("@k3rn31p4nic/google-translate-api")
+const translate = require("@iamtraction/google-translate")
 module.exports = {
     name: "translate",
     category: "info",
@@ -8,13 +8,10 @@ module.exports = {
     run: async (Client, message, args) => {
         let language = args[0];
         let text = args.slice(1).join(" ");
-
-        if (!language)
-            return message.reply("Quel langage je dois traduire")
-        if (language.length !== 2)
-            return message.reply("Mettre un langage valide");
-
-        if (!text) return message.reply("Je dois traduire quoi");
+        var erreur = new Discord.MessageEmbed()
+            .setColor("#2F3136")
+            .setTitle("<:warning:869206692091531305> !translate <langue de traduction (en, fr, etc)> <phrase à traduire>")
+        if (!language || language.length !== 2 || !text) return message.reply(erreur)
 
         const result = await translate(text, { to: language });
 
