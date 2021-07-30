@@ -22,6 +22,6 @@ module.exports = {
             .addField('⚙️ Roles :', member.roles.cache.map(roles => `${roles.name}`).join(' - '), true)
             .addField('🎮 Joue a :', `${presence && presence.length ? presence[0].name : 'Rien'}`, true)
             .setFooter(`En réponse à : ${message.author.tag}`)
-        message.channel.send(embed).then(message => message.delete({ timeout: 15000 }));
+        message.channel.send(embed)
     }
 }
