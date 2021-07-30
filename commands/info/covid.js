@@ -8,11 +8,11 @@ module.exports = {
         var prefix = "!"
         const countrycovid = message.content.slice(prefix.length).split(' ')
         const data = await api.countries({ country: countrycovid })
-        if (data.cases === undefined && data.deaths === undefined && data.recovered === undefined && data.active === undefined) {
-            message.channel.send("**:x: | Pays introuvable ! (Mettre les pays en anglais)**")
-            return;
-        } else if (countrycovid.length === 0) {
-            message.channel.send("**:x: | Pays introuvable ! (Mettre les pays en anglais)**")
+        if (data.cases === undefined && data.deaths === undefined && data.recovered === undefined && data.active === undefined || countrycovid.length === 0) {
+            var erreur = new Discord.MessageEmbed()
+                .setColor("#2F3136")
+                .setTitle("<a:non:802645550435532810> Pays introuvable ! (Mettre les pays en anglais)")
+            message.channel.send(erreur)
             return;
         } else {
             const embed = new Discord.MessageEmbed()
